@@ -57,21 +57,13 @@ def variance_own(lst):
 def max_data_own(lst):
     if not all(isinstance(x, (float, int)) for x in lst):
         return None
-    max_val = lst[0]
-    for item in lst:
-        if item > max_val:
-            max_val = item
-    return max_val
+    return max(lst)
 
 # Minimum Value
 def min_data_own(lst):
     if not all(isinstance(x, (float, int)) for x in lst):
         return None
-    min_val = lst[0]
-    for item in lst:
-        if item < min_val:
-            min_val = item
-    return min_val
+    return min(lst)
 
 # Range
 def range(lst):
@@ -178,3 +170,18 @@ def unique_values_own(lst):
     num_unique = len(unique_set)
     
     return num_unique
+
+# Proportion
+def proportion(lst):
+  arr = {}
+  for x in lst:
+    if x in arr:
+      arr[x] += 1
+    else:
+      arr.setdefault(x, 1)
+
+  sum_val = sum(arr.values())
+  for x in arr:
+    arr[x] /= sum_val
+
+  return arr
