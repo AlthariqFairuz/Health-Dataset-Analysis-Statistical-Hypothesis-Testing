@@ -185,3 +185,10 @@ def proportion(lst):
     arr[x] /= sum_val
 
   return arr
+
+def calculate_length(lst):
+    length = 0
+    for _ in lst:
+        length += 1
+    return length
+  
